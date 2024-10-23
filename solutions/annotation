@@ -1,0 +1,70 @@
+1. Basic Type Annotations
+typescript
+Copy code
+let age: number = 25;
+let name: string = "John";
+let isStudent: boolean = true;
+2. Function Type Annotations
+You can annotate the types of function parameters and the return type:
+
+typescript
+Copy code
+function add(a: number, b: number): number {
+  return a + b;
+}
+3. Object Type Annotations
+You can define types for objects by creating type aliases or interfaces:
+
+typescript
+Copy code
+// Using a type alias
+type Person = {
+  name: string;
+  age: number;
+  isStudent?: boolean; // Optional property
+};
+
+let person: Person = {
+  name: "Alice",
+  age: 30,
+};
+
+// Using an interface
+interface Car {
+  make: string;
+  model: string;
+  year: number;
+}
+
+let myCar: Car = {
+  make: "Toyota",
+  model: "Corolla",
+  year: 2021,
+};
+4. Array Type Annotations
+typescript
+Copy code
+let numbers: number[] = [1, 2, 3, 4];
+let strings: string[] = ["apple", "banana", "cherry"];
+5. Function Type as Variable
+You can also define types for functions stored in variables:
+
+typescript
+Copy code
+let multiply: (x: number, y: number) => number;
+multiply = (a, b) => a * b;
+6. Union Types
+A variable can hold multiple types using union types:
+
+typescript
+Copy code
+let id: number | string;
+id = 101; // OK
+id = "101"; // Also OK
+7. Type Assertion
+You can use type assertions to tell TypeScript to treat a value as a specific type:
+
+typescript
+Copy code
+let someValue: any = "this is a string";
+let strLength: number = (someValue as string).length;
